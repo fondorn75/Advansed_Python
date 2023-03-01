@@ -3,7 +3,6 @@ import math
 # Решите квадратное уравнение 5x2-10x-400=0 последовательно
 # сохраняя переменные a, b, c, d, x1 и x2.
 
-
 result = ""
 a = -5
 b = 2
@@ -29,6 +28,16 @@ print(result)
 # Используйте while и if.
 # Попробуйте разные значения e и n.
 
+n = 10
+e = 4
+a = 1
+summ = 0
+while a < n:
+    if a % 2 == 0 and a % e != 0:
+        summ += a
+    a += 1
+
+print(summ)
 
 # Напишите программу, которая запрашивает год и проверяет его
 # на високосность.
@@ -39,8 +48,10 @@ print(result)
 
 userYear = int(input("Введите год: "))
 result = ""
-if userYear % 100 == 0:
-    result = "Год обычный"
+if userYear % 4 != 0 or userYear % 100 == 0 and userYear % 400 != 0:
+    result = "Обычный год"
+else:
+    result = "Високосный год"
 
 print(result)
 
