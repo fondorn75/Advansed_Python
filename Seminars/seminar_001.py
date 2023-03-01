@@ -49,11 +49,11 @@ print(summ)
 userYear = int(input("Введите год: "))
 result = ""
 if userYear % 4 != 0 or userYear % 100 == 0 and userYear % 400 != 0:
-    result = "Обычный год"
+    yearResult = "Обычный год"
 else:
-    result = "Високосный год"
+    yearResult = "Високосный год"
 
-print(result)
+print(yearResult)
 
 # Пользователь вводит число от 1 до 999. Используя операции с числами
 # сообщите что введено: цифра, двузначное число или трёхзначное число.
@@ -64,12 +64,38 @@ print(result)
 # Откажитесь от магических чисел
 # В коде должны быть один input и один print
 
+MIN_NUM = 1
+MAX_NUM = 999
+
+number = int(input(f"Введите число от {MIN_NUM} до {MAX_NUM}: "))
+
+if number < 10:
+    resultNum = number ** 2
+elif 10 <= number < 100:
+    a = number // 10
+    b = number % 10
+    resultNum = a * b
+else:
+    a = number // 100
+    b = number % 100 // 10
+    c = number % 10
+    resultNum = c * 100 + b * 10 + a
+print(resultNum)
 
 # Нарисовать в консоли ёлку спросив у пользователя количество рядов.
 
-inputRow = int(input("Введите число рядов: "))
-while inputRow > 0:
-    print("*")
-    inputRow -= 1
+n = int(input("Введите число рядов: "))
+for i in range(n):
+    k1 = n - i - 1
+    k2 = n + i - 1
+    for j in range(k2 + 1):
+        print('*' if j >= k1 else ' ', end='')
+    print()
+
 
 # Выведите в консоль таблицу умножения от 2х2 до 9х10 как на школьной тетрадке.
+
+for i in range(1, 10):
+   for j in range(1, 10):
+       print(i, '*', j, '=', i * j, end='\t\t')
+   print()
