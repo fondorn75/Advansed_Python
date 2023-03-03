@@ -5,10 +5,19 @@ import fractions
 string1 = input("Введите первую дробь: ")
 string2 = input("Введите вторую дробь: ")
 
-summFractions = 12 + 12
-multiplicationFractions = 12 * 12
+fraction1 = string1.split("/")
+fraction2 = string2.split("/")
 
-f1 = fractions.Fraction(2, 10)
-f2 = fractions.Fraction(2, 12)
+multFractionsNumerator = int(fraction1[0]) * int(fraction2[0])
+multFractionsDenominator = int(fraction1[1]) * int(fraction2[1])
+print(f"{multFractionsNumerator}/{multFractionsDenominator}")
+
+summFractionsNumerator = int(fraction1[0]) * int(fraction2[1]) + int(fraction2[0]) * int(fraction1[1])
+summFractionsDenominator = int(fraction1[1]) * int(fraction2[1]) + int(fraction1[1]) * int(fraction2[1])
+print(f"{summFractionsNumerator}/{summFractionsDenominator}")
+
+f1 = fractions.Fraction(int(fraction1[0]), int(fraction1[1]))
+f2 = fractions.Fraction(int(fraction2[0]), int(fraction2[1]))
 
 print(f1, f2, f1 * f2, sep=",")
+print(f1, f2, f1 + f2, sep=",")
