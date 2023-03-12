@@ -2,19 +2,12 @@
 # где ключ - значение переданного аргумента, а значение - имя аргумента.
 # Если ключ не хешируем, используйте его строковое представление.
 
-def argInDictionary(*, userkey=("one", "two", "three", "four")):
+def argInDictionary(**kwargs):
     result = dict()
 
-    for key in userkey:
-        result[key] = "userkey"
+    for key, value in kwargs.items():
+        result[value] = key
     return result
 
 
-print(argInDictionary())
-
-
-def argsDictionary2(**kwargs):
-    return kwargs
-
-
-print(argsDictionary2(a=1, b=2, c=3, d=4))
+print(argInDictionary(one=1, two=2, three=3, four=4))
