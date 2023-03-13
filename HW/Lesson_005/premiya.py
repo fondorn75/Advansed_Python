@@ -16,3 +16,11 @@ rates = [20000, 25000, 18000]
 prizes = ["10.25%", "10.25%", "10.25%"]
 
 print(sumPrizes(names, rates, prizes))
+
+
+def genSumPrizes(names: list[str], rates: list[int], prizes: [str]):
+    result = {name: (rate * float(prize[:-1])) / 100 for name, rate, prize in zip(names, rates, prizes)}
+    return result
+
+print(genSumPrizes(names, rates, prizes))
+

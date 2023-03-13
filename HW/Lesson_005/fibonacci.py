@@ -11,6 +11,7 @@ def fibonacсi(number: int):
             numberOne = numberTwo
             numberTwo = sumFib
             i += 1
-    return result
+            yield result
 
-print(fibonacсi(12))
+for i, res in enumerate(fibonacсi(12), start=1):
+    print(f"{i} = {res}")
