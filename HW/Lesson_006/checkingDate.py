@@ -3,21 +3,22 @@
 # Для простоты договоримся, что год может быть в диапазоне [1, 9999].
 # Весь период (1 января 1 года - 31 декабря 9999 года) действует Григорианский календарь.
 # Проверку года на високосность вынести в отдельную защищённую функцию.
-from datetime import date
+import datetime
+
+__all__ = ["checkDate", "userDate", "temp"]
 
 
-def foo(y, m, d):
-    if date(y, m, d):
+def checkDate() -> bool:
+    try:
+        datetime.datetime.strptime(userDate or "", "%d.%m.%Y")
         return True
-    else:
+    except ValueError:
         return False
 
 
 if __name__ == "__main__":
     userDate = input("Введите дату в формате DD.MM.YYYY: ")
-    listDate = userDate.split('.')
-    temp = foo(int(listDate[2]), int(listDate[1]), int(listDate[0]))
-
+    temp = checkDate()
     if temp:
         print("Дата может существовать")
     else:

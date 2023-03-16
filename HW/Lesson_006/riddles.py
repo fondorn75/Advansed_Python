@@ -3,6 +3,8 @@
 # Функция в цикле вызывает загадывающую функцию, чтобы передать ей все свои загадки.
 import random
 
+__all__ = ["userRiddles", "dictRiddles"]
+
 
 def userRiddles(riddle: str, option: list, count: int) -> int:
     print(riddle)
