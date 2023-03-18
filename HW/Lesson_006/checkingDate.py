@@ -5,7 +5,7 @@
 # Проверку года на високосность вынести в отдельную защищённую функцию.
 import datetime
 
-__all__ = ["checkDate", "userDate", "temp"]
+__all__ = ["checkDate"]
 
 
 def checkDate() -> bool:

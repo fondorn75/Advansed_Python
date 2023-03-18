@@ -1,14 +1,8 @@
 # 3. Создайте пакет с всеми модулями, которые вы создали за время занятия.
 # Добавьте в init пакета имена модулей внутри дандер all.
 # В модулях создайте дандер all и укажите только те функции, которые могут верно работать за пределами модуля.
-import checkingDate
-import riddles
 
-if __name__ == "__main__":
-    userDate = input("Введите дату в формате DD.MM.YYYY: ")
-    temp = checkingDate.checkDate()
-    if temp:
-        print("Дата может существовать")
-    else:
-        print("Дата не существует. ")
+
+__all__ = ["checkingDate", "riddles"]
+
 
