@@ -15,7 +15,7 @@
 import os
 from pathlib import Path
 
-__all__ = ["sequenceNumber", "getUserPath", "userFileRename"]
+__all__ = ["sequenceNumber", "userSymbols", "trimName"]
 
 
 def sequenceNumber(num: int):
@@ -25,32 +25,28 @@ def sequenceNumber(num: int):
     return result
 
 
-def getUserPath():
-    userDir = "D:\\TEMP\\Advansed_Python\\HW\\Lesson_007\\Test\\"
-    result = []
-    path = Path(userDir)
-
-    for item in path.rglob("*"):
-        if item.is_file():
-            result.append(item.name)
-    for file in result:
-        fullName = os.path.basename(file)
-        fileName = os.path.splitext(fullName)[0]
-        fileExtention = os.path.splitext(fullName)[1]
-        return userDir, fullName, fileName, fileExtention
+def userSymbols():
+    userSymbol = input("Введите желаемое имя: ")
+    return userSymbol
 
 
-def userFileRename(newFileName: str, number: int, fileExtension: str):
-    result = f"{newFileName}_{number}{fileExtension}"
-    os.rename(f"{getUserPath()[0]}{getUserPath()[1]}", f"test/{result}")
-
+def trimName(name: str, start: int, end: int):
+    result = name[start:end]
     return result
 
 
 if __name__ == "__main__":
-    print(sequenceNumber(3))
-    print(getUserPath())
-    userFileRename(getUserPath()[2], int(sequenceNumber(3)) + 1, getUserPath()[3])
+    userDir = "D:\\TEMP\\Advansed_Python\\HW\\Lesson_007\\Test\\"
+    path = Path(userDir)
+    sym = userSymbols()
+    for item in path.rglob("*"):
+        number = int(sequenceNumber(3)) + 1
+        if item.is_file():
+            fullName = os.path.basename(item.name)
+            fileName = trimName(os.path.splitext(fullName)[0], 2, 5)
+            fileExtention = os.path.splitext(fullName)[1]
+            result = f"{fileName}{sym}_{number}{fileExtention}"
+            os.rename(f"{userDir}{fullName}", f"{userDir}{result}")
 
 
 
