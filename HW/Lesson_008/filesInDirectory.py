@@ -22,12 +22,12 @@ if __name__ == "__main__":
         json.dump(fileinDirectories(userPath), f)
 
     temp = fileinDirectories(userPath)
-    # csvColumns = ['name', 'type', 'children']
-    # with open("dir.csv", 'w') as csvfile:
-    #     writer = csv.DictWriter(csvfile, fieldnames=csvColumns)
-    #     writer.writeheader()
-    #     for data in temp:
-    #         writer.writerow(data)
+    csvColumns = ['name', 'type', 'children']
+    with open("dir.csv", 'w') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=csvColumns)
+        writer.writeheader()
+        for data in temp:
+            writer.writerow(data)
 
     with open('myDir.pickle', 'wb') as f:
         pickle.dump(temp, f)

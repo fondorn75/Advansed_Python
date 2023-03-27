@@ -1,1 +1,1 @@
-{"name": "", "type": "directory", "children": [{"name": "dir.csv", "type": "file"}, {"name": "filesInDirectory.py", "type": "file"}, {"name": "new_dir.json", "type": "file"}]}
+{"name": "", "type": "directory", "children": [{"name": "dir.csv", "type": "file"}, {"name": "filesInDirectory.py", "type": "file"}, {"name": "myDir.pickle", "type": "file"}, {"name": "new_dir.json", "type": "file"}]}
