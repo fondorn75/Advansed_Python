@@ -5,6 +5,9 @@
 import math
 
 
+__all__ = ["quadraticEquation"]
+
+
 def quadraticEquation(a: int, b: int, c: int):
     result = ""
     d = b * b - 4 * a * c
