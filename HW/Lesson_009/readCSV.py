@@ -25,19 +25,16 @@ def count(num: int = 1):
 @count(NUMBER)
 def newQuadratic(i=0):
     numberList = []
-    result = []
     with open('gencsv.csv', 'r', newline='') as f:
         csv_file = csv.reader(f)
         for line in csv_file:
             numberList.append(line)
-            if i < NUMBER - 2:
+            if i < NUMBER:
                 a = numberList[i][j]
                 b = numberList[i][j + 1]
                 c = numberList[i][j + 2]
             i += 1
-            temp = a, b, c, decFunc.quadraticEquation(int(a), int(b), int(c))
-            result.append(temp)
-        return result
+        return a, b, c, decFunc.quadraticEquation(int(a), int(b), int(c))
 
 
 with open('newgencsv.csv', 'w', newline='') as f:
