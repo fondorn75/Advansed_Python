@@ -29,14 +29,17 @@ def newQuadratic(i=0):
         csv_file = csv.reader(f)
         for line in csv_file:
             numberList.append(line)
-            if i < NUMBER:
+            if i < NUMBER - 2:
                 a = numberList[i][j]
                 b = numberList[i][j + 1]
                 c = numberList[i][j + 2]
             i += 1
-        return a, b, c, decFunc.quadraticEquation(int(a), int(b), int(c))
+        result = a, b, c, decFunc.quadraticEquation(int(a), int(b), int(c))
+        print(result)
+        return result
 
+newQuadratic()
 
-with open('newgencsv.csv', 'w', newline='') as f:
-    writer = csv.writer(f)
-    writer.writerows(newQuadratic())
+# with open('newgencsv.csv', 'w', newline='') as f:
+#     writer = csv.writer(f)
+#     writer.writerows(newQuadratic())
