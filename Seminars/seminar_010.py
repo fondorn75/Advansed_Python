@@ -8,6 +8,10 @@
 
 
 class fish:
+    def __init__(self):
+        self.name = "fish"
+        self.vid = "water"
+
     def atributsFish(self, name):
         name = name
 
