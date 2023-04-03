@@ -2,6 +2,10 @@ import math
 
 
 class Quadratic:
+    def __init__(self, a: int, b: int, c: int):
+        self.a = a
+        self.b = b
+        self.c = c
 
     def quadraticEquation(a: int, b: int, c: int):
         result = ""
@@ -20,4 +24,5 @@ class Quadratic:
 
 
 if __name__ == '__main__':
-    print(Quadratic.quadraticEquation(2, -5, -4))
+    q = Quadratic.quadraticEquation(2, -5, -4)
+    print(q)
