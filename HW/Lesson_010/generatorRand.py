@@ -3,10 +3,10 @@ import random
 
 class GeneratorRand:
 
-    def __init__(self):
-        self.count = None
-        self.i = None
-        self.result = None
+    def __init__(self, i, count, result):
+        self.count = count
+        self.i = i
+        self.result = result
 
     def genCsvQuadratic():
         count = 10
