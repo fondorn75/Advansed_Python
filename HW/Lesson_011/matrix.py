@@ -13,17 +13,28 @@ class Matrix:
         self.a1 = a1
         self.a2 = a2
 
-    def matrixSumm(self):
+    def __repr__(self):
+        return f'matrix 1 \n ({self.a1}\n matrix 2 \n {self.a2})'
+
+    def __add__(self):
         """Matrix Addition"""
         return a1 + a2
+
+    def __eq__(self, other):
+        """Matrix Comparison"""
+        return self is other
+
+    # def matrixSumm(self):
+    #     """Matrix Addition"""
+    #     return a1 + a2
 
     def matrixMult(self):
         """Multiplication matrix"""
         return a1.dot(a2)
 
-    def matrixComp(self):
-        """Matrix Comparison"""
-        return np.array_equiv(a1, a2)
+    # def matrixComp(self):
+    #     """Matrix Comparison"""
+    #     return np.array_equiv(a1, a2)
 
     def printMatrix(self):
         return f'{a1}\n {a2}'
@@ -33,12 +44,16 @@ if __name__ == '__main__':
     a1 = np.array([[3, 3, 3], [2, 5, 5], [4, 2, 1]], int)
     a2 = np.array([[2, 5, 4], [5, 3, 2], [6, 4, 3]], int)
     ms = Matrix(a1, a2)
-    print(ms.matrixSumm())
-    print(ms.matrixMult())
+    print(ms.__add__())
+    print(ms.__repr__())
+    print(ms.__eq__(a2))
 
-    if not ms.matrixComp():
-        print("Матрицы не равны")
-    else:
-        print('Матрицы равны')
-
-    print(ms.printMatrix())
+    # print(ms.matrixSumm())
+    # print(ms.matrixMult())
+    #
+    # if not ms.matrixComp():
+    #     print("Матрицы не равны")
+    # else:
+    #     print('Матрицы равны')
+    #
+    # print(ms.printMatrix())
