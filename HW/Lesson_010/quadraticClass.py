@@ -7,22 +7,22 @@ class Quadratic:
         self.b = b
         self.c = c
 
-    def quadraticEquation(a: int, b: int, c: int):
+    def quadraticEquation(self):
         result = ""
-        d = b * b - 4 * a * c
+        d = self.b * self.b - 4 * self.a * self.c
         if d < 0:
             result = "У уравнения нет действительных корней"
         elif d == 0:
-            x1 = (-b + (math.sqrt(d))) / (2 * a)
-            x2 = (-b - (math.sqrt(d))) / (2 * a)
+            x1 = (-self.b + (math.sqrt(d))) / (2 * self.a)
+            x2 = (-self.b - (math.sqrt(d))) / (2 * self.a)
             result = f'У уравнения два равных корня: {x1}, {x2}'
         elif d > 0:
-            x1 = (-b + (math.sqrt(d))) / (2 * a)
-            x2 = (-b - (math.sqrt(d))) / (2 * a)
+            x1 = (-self.b + (math.sqrt(d))) / (2 * self.a)
+            x2 = (-self.b - (math.sqrt(d))) / (2 * self.a)
             result = f'У уравнения два разных корня: {x1}, {x2}'
         return result
 
 
 if __name__ == '__main__':
-    q = Quadratic.quadraticEquation(2, -5, -4)
-    print(q)
+    q = Quadratic(2, -5, -4)
+    print(q.quadraticEquation())
