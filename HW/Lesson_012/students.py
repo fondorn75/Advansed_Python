@@ -9,8 +9,14 @@ import csv
 
 class Students:
 
-    def __init__(self, fio):
-        self.fio = fio
+    def __init__(self, name, age, subject, office):
+        self.name = name
+        self.age = age
+        self.subject = subject
+        self.office = office
+
+    def __repr__(self):
+        return f'Student(Имя = {self.name}, Возраст = {self.age}, Предметы = {self.subject}, Кабинет = {self.office})'
 
     def readingCsv(self):
         numberList = []
@@ -22,5 +28,8 @@ class Students:
 
 
 if __name__ == '__main__':
-    s = Students("Иванов Иван Иванович")
-    print(s.readingCsv())
+    s = Students("Иванов Иван Иванович", 18, "subjects", 32)
+    subjects = s.readingCsv()
+    s.subject = subjects
+    print(s.__repr__())
+
