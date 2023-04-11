@@ -1,12 +1,18 @@
 # Напишите программу, которая получает целое число и возвращает его шестнадцатеричное строковое представление.
 # Функцию hex используйте для проверки своего результата.
 
-number = int(input("Введите число: "))
+try:
+    number = int(input("Введите число: "))
+except ValueError as e:
+    print(f"На вход только числа, а вы ввели - {e}")
+else:
+     number = 100
+     print(f'Будем считать, что вы ввели - {number}')
 
 result = ""
 temp = 0
 
-print(hex(number))
+# print(hex(number))
 
 while number != 0:
     temp = number % 16

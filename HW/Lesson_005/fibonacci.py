@@ -1,6 +1,6 @@
 # Создайте функцию генератор чисел Фибоначчи (см. Википедию)
 
-def fibonacсi(number: int):
+def fibonaci(number: int):
     numberOne = 1
     numberTwo = 1
     result = "0, 1, 1, "
@@ -13,5 +13,6 @@ def fibonacсi(number: int):
             i += 1
             yield result
 
-for i, res in enumerate(fibonacсi(12), start=1):
+
+for i, res in enumerate(fibonaci(12), start=1):
     print(f"{i} = {res}")

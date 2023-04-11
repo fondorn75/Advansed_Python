@@ -29,5 +29,3 @@ if __name__ == '__main__':
         print(q.quadraticEquation())
     except TypeError as e:
         print(f"Должны передаваться числа - {e}")
-
-
