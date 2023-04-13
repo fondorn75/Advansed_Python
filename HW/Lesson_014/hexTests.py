@@ -1,3 +1,4 @@
+
 def hexCreation(num: int):
     """
     Checks сonverting a number to hexadecimal representation.
